@@ -1,19 +1,63 @@
 {
-    "editor.formatOnSave": true,
-    "editor.wordWrap": "on",
-    "latex-workshop.latex.outDir": "./out",
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.docker.enabled": true,
-    "latex-workshop.docker.image.latex": "ghcr.io/xu-cheng/texlive-full",
-    "latex-workshop.view.pdf.invert": 0,
-    "latex-workshop.view.pdf.invertMode.enabled": "compat",
-    "cSpell.language": "en-GB",
-    "cSpell.ignorePaths": [
-        "**/vscode-extension/**",
-        "**/.git/objects/**",
-        ".vscode",
-    ],
-    "cSpell.words": [
-        "connectionist",
-    ]
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "latex-workshop.latex.outDir": "./out",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.docker.enabled": true,
+  "latex-workshop.docker.image.latex": "ghcr.io/xu-cheng/texlive-full",
+  "latex-workshop.view.pdf.invert": 0,
+  "latex-workshop.view.pdf.invertMode.enabled": "compat",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Compile with XeLaTeX",
+      "tools": [
+        "xelatex"
+      ]
+    },
+    {
+      "name": "Compile with LuaLaTeX",
+      "tools": [
+        "lualatex"
+      ]
+    },
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "latexmk",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "lualatex",
+      "command": "latexmk",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-lualatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "cSpell.language": "en,vi",
+  "cSpell.ignorePaths": [
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    "**/.github/workflows",
+    ".vscode",
+  ],
 }

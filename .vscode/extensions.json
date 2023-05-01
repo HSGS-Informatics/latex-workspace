@@ -1,6 +1,8 @@
 {
     "recommendations": [
         "streetsidesoftware.code-spell-checker",
-        "james-yu.latex-workshop"
+        "streetsidesoftware.code-spell-checker-vietnamese",
+        "james-yu.latex-workshop",
+        "ms-vsliveshare.vsliveshare"
     ]
 }
